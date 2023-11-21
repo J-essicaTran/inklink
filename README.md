@@ -5,3 +5,4 @@
 - Jessica Tran
 - Jasraj Sandhu
 - Manreet Bansal
+- John Lugue
