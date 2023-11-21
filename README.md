@@ -4,3 +4,4 @@
 
 - Jessica Tran
 - Jasraj Sandhu
+- Manreet Bansal
