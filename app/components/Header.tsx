@@ -1,14 +1,18 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { HiSearch, HiBell, HiChat } from "react-icons/hi";
 
 function Header() {
   return (
     <div className='flex gap-3 md:gap-2 items-center p-6'>
-        <Image src='/logo.png' alt='logo'
-        width={50} height={50}
-        className='hover:bg-gray-200 p-2
-        rounded-full cursor-pointer'/>
+        
+        <Link href="/">
+          <Image src='/logo.png' alt='logo'
+          width={70} height={70}
+          className='hover:bg-gray-200 p-2
+          rounded-full cursor-pointer'/>
+        </Link>
 
         <button className='bg-black text-white p-2 px-4 rounded-full'>Home</button>
         <button className='font-semibold p-2 px-4 rounded-full'>Create</button>
