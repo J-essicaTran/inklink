@@ -24,4 +24,4 @@ const auth = getAuth();
 // Get database reference
 const database = getDatabase();
 
-export {app, auth}
+export {app, auth, database}
