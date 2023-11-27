@@ -22,6 +22,6 @@ const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth();
 
 // Get database reference
-const database = getDatabase();
+const db = getDatabase();
 
-export {app, auth, database}
+export {app, auth, db}
