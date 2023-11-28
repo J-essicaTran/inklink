@@ -24,7 +24,7 @@ function CreateJournal() {
       </div>
 
       <div className="pt-4 pb-4">
-        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-500 hover:text-purple-200">
           New Journal
         </button>
       </div>
@@ -36,7 +36,7 @@ function CreateJournal() {
             <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
               <span className="text-gray-200 text-2xl">Journal Image</span>
               <svg className="w-16 h-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
               </svg>
               <span className="text-gray-200">Drag and drop your files here</span>
               <span className="text-gray-100 text-sm">(or click to select)</span>
@@ -72,7 +72,7 @@ function CreateJournal() {
       </div>
 
       <div className=" pt-8 pb-4">
-        <button type="button" className="border-2 border-purple-600 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-600 hover:text-purple-200">
+        <button type="button" className="border-2 border-purple-600 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-600 hover:text-purple-200">
           Add Media
         </button>
       </div>
@@ -83,7 +83,7 @@ function CreateJournal() {
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
             <svg className="m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
@@ -92,7 +92,7 @@ function CreateJournal() {
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
             <svg className="m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
@@ -101,7 +101,7 @@ function CreateJournal() {
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
             <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
@@ -110,7 +110,7 @@ function CreateJournal() {
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
             <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
@@ -119,7 +119,7 @@ function CreateJournal() {
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
             <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />

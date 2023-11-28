@@ -23,7 +23,7 @@ function ViewJournal() {
       </div>
 
       <div className="pt-4 pb-4">
-        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-500 hover:text-purple-200">
           <span>Journal Name</span>
         </button>
       </div>
@@ -53,7 +53,7 @@ function ViewJournal() {
       </div>
 
       <div className=" pt-8 pb-4">
-        <button type="button" className="border-2 border-purple-600 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-600 hover:text-purple-200">
+        <button type="button" className="border-2 border-purple-600 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-600 hover:text-purple-200">
           <span>Journal Media</span>
         </button>
       </div>
