@@ -1,8 +1,10 @@
 'use client';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { ref, set } from 'firebase/database';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { auth } from '../firebase';
+import { db } from '../firebase'
 import Logo from './../components/Logo'
 
 function Signup() {
@@ -12,21 +14,41 @@ function Signup() {
   const router = useRouter();
 
   const signup = () => {
-    createUserWithEmailAndPassword(auth, email, password);
+    // The ".then" block  runs after successful creation of account
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // User account created successfully
+        const user = userCredential.user;
+        const uid = user.uid;
+        console.log('User UID:', uid);
+        console.log('User Email:', email);
+        console.log('User Password:', password);
+        
+        // Add the user to the database
+        AddUserToDB(uid, email);
+    })
   };
+
+// Called after successful user signup
+function AddUserToDB(uid: string, email: string) {
+  set(ref(db, 'users/' + uid), {
+    email: email,
+    profile_pic: null
+  });
+}
 
   return (
     <div className="flex min-h-full flex-1 flex-col items-center justify-center h-screen bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF]">
       <div className="w-full rounded-xl shadow dark:border md:mt-0 sm:max-w-md xl:p-3 dark:bg-[#222527] dark:border-white">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          
+
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             {/* <div className="flex items-center justify-center">
               <h1 className="text-white text-4xl font-thin">INK</h1>
               <img className="-ml-2" src="./logo.png" alt="logo" width={75} height={75}/>
               <h1 className="text-white text-4xl -ml-2 font-thin">LINK</h1>
             </div> */}
-            <Logo/>
+            <Logo />
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
