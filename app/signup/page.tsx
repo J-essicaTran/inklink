@@ -3,9 +3,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { auth } from '../firebase';
-import { db } from '../firebase'
+import { auth, db, firestoreDB } from '../firebase';
 import Logo from './../components/Logo'
+import { doc, setDoc } from "firebase/firestore";
 
 function Signup() {
   const [email, setEmail] = useState('');
