@@ -9,6 +9,7 @@ import { doc, setDoc } from "firebase/firestore";
 
 function Signup() {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState(''); // note: USERNAME WON'T SHOW UP IN AUTHENTICATION PAGE OF FIREBASE!
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
   const router = useRouter();
@@ -21,19 +22,32 @@ function Signup() {
         const user = userCredential.user;
         const uid = user.uid;
         console.log('User UID:', uid);
+        console.log('Username:', username);
         console.log('User Email:', email);
         console.log('User Password:', password);
         
-        // Add the user to the database
-        AddUserToDB(uid, email);
+        // Add the user to the REALTIME DATABASE
+        // AddUserToDB(uid, email);
+
+        // Add the user to the FIRESTORE DATABASE
+        AddUserToFirestoreDB(uid, email, username);
     })
   };
 
 // Called after successful user signup
-function AddUserToDB(uid: string, email: string) {
-  set(ref(db, 'users/' + uid), {
+// function AddUserToDB(uid: string, email: string) {
+//   set(ref(db, 'users/' + uid), {
+//     email: email,
+//     profile_pic: null
+//   });
+// }
+
+// Called after successful user signup
+function AddUserToFirestoreDB(uid: string, email: string, username: string) {
+  // Usage: setDoc(doc(DATABASE, COLLECTION_NAME, DOCUMENT_NAME))
+  setDoc(doc(firestoreDB, 'users', uid), {
     email: email,
-    profile_pic: null
+    username: username
   });
 }
 
@@ -63,6 +77,23 @@ function AddUserToDB(uid: string, email: string) {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="Email Address"
+                    className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 dark:placeholder-white/25"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <div className="flex items-center justify-between">
+                </div>
+                <div className="mt-2">
+                  <input
+                    id="username"
+                    name="username"
+                    type="username"
+                    autoComplete="username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    required
+                    placeholder="Username"
                     className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 dark:placeholder-white/25"
                   />
                 </div>
