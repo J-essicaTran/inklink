@@ -4,6 +4,7 @@ import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
 
 // Your web app's Firebase configuration
@@ -21,7 +22,10 @@ const firebaseConfig = {
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth();
 
-// Get database reference
+// Get database reference to REALTIME DATABASE
 const db = getDatabase();
 
-export {app, auth, db}
+// Initialize Firestore and get reference to the database service
+const firestoreDB = getFirestore(app);
+
+export {app, auth, db, firestoreDB}
