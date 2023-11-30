@@ -1,4 +1,12 @@
+'use client';
+import { useState } from "react";
+
 function CreateJournal() {
+  const [thumbnail, setThumbnail] = useState('');
+  const [journalName, setJournalName] = useState('');
+  const [description, setDescription] = useState('');
+  const [groupSize, setGroupSize] = useState('');
+
   return (
     <div className="h-screen w-screen p-2 m-0">
       {/* Header/Navbar??  are we putting nav on the top or right? top seems better I thinks*/}
@@ -41,7 +49,12 @@ function CreateJournal() {
               <span className="text-gray-200">Drag and drop your files here</span>
               <span className="text-gray-100 text-sm">(or click to select)</span>
             </label>
-            <input type="file" id="fileInput" className="hidden" multiple />
+            <input
+              type="file"
+              id="fileInput"
+              className="hidden"
+              onChange={(e) => setThumbnail(e.target.value)}
+            />
           </div>
 
         </div>
@@ -50,6 +63,7 @@ function CreateJournal() {
             <input
               type="text" className="w-96 border  rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
               placeholder="Journal Name"
+              onChange={(e) => setJournalName(e.target.value)}
             />
           </div>
 
@@ -57,6 +71,7 @@ function CreateJournal() {
             <textarea
               className="h-60 w-10/12 border rounded-md py-2 px-4 bg-transparent  border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
               placeholder="Description"
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
 
@@ -64,7 +79,7 @@ function CreateJournal() {
             <span> Group Size: </span>
             <input
               type="text" className="w-1/12 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
-
+              onChange={(e) => setGroupSize(e.target.value)}
             />
           </div>
 
