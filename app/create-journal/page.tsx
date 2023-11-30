@@ -146,7 +146,7 @@ function CreateJournal() {
         <button type="button" className="ml-2 border-2 border-gray-600 rounded-full px-3 py-2 text-gray-400 cursor-pointer hover:bg-gray-600 hover:text-gray-200">
           Cancel
         </button>
-        <button type="button" className="ml-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+        <button type="button" onClick={() => console.log(journalName, description, groupSize)} className="ml-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
           Publish
         </button>
       </div>
