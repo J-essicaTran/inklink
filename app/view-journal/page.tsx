@@ -1,11 +1,12 @@
+'use client';
+import Logo from './../components/Logo'
+
 function ViewJournal() {
   return (
     <div className="h-screen w-screen p-2 m-0">
       <div className="p-1 pb-3 flex flex-row">
         <div className="self-center flex-grow">
-          <button className="pl-1">
-            <img src="./name.png" alt="InkLink" />
-          </button>
+          <Logo/>
         </div>
 
         <button type="button" className="mr-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
@@ -18,7 +19,7 @@ function ViewJournal() {
 
       </div>
 
-      <div className="h-2 w-full bg-pink-600 flex justify-center content-center rounded-full">
+      <div className="h-2 w-full bg-pink-600 flex items-center rounded-full">
         <div className="h-1 w-full bg-white rounded-full"> </div>
       </div>
 

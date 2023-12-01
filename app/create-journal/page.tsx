@@ -1,37 +1,43 @@
+'use client';
+import Logo from './../components/Logo'
+import Link from 'next/link'
+
 function CreateJournal() {
   return (
     <div className="h-screen w-screen p-2 m-0">
-      {/* Header/Navbar??  are we putting nav on the top or right? top seems better I thinks*/}
-      <div className="p-1 pb-3 flex flex-row ">
-        <div className="self-center flex-grow">
-          <button className="pl-1">
-            <img src="./name.png" alt="InkLink" />
-          </button>
+      <div className="p-1 pb-3 flex flex-row justify-between items-center">
+        <div className="ml-3">
+          <Logo/>
         </div>
 
-        <button type="button" className="mr-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
-          <img src="./profile_icon.png" alt="profile icon" />
-        </button>
+        <div className="flex">
+          <Link href="/profile" className="mt-2 mr-2 max-h-12 flex flex-row border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+            <img src="./profile_icon.png" alt="profile icon" />
+            <span className="hidden md:block">Profile</span>
+          </Link>
 
-        <button type="button" className="ml-2 mr-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
-          <img src="./exit_icon.png" alt="exit icon" /> 
-        </button>
+          <Link href="/" className="mt-2 ml-2 mr-2 max-h-12 flex flex-row border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+            <img src="./exit_icon.png" alt="exit icon" /> 
+            <span className="hidden md:block">Exit</span>
+          </Link>
+        </div>
+        
 
       </div>
 
-      <div className="h-2 w-full bg-pink-600 flex justify-center content-center rounded-full">
-        <div className="h-1 w-full bg-white rounded-full"> </div>
+      <div className="h-2 w-full bg-pink-600 flex justify-center items-center rounded-full">
+        <div className="m-0 h-1 w-full bg-white rounded-full"> </div>
       </div>
 
-      <div className="pt-4 pb-4">
-        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-500 hover:text-purple-200">
+      <div className="pt-4 pb-1">
+        <div className="border-2 border-purple-500 rounded-md px-3 py-2 cursor-default bg-purple-500 text-purple-100">
           New Journal
-        </button>
+        </div>
       </div>
 
 
-      <div className="flex gap-5 w-full h-96 p-6 bg-neutral-800 rounded-lg shadow-lg">
-        <div className="w-5/12 h-full">
+      <div className="flex flex-col md:flex-row gap-5 w-full h-full md:h-96 p-6 bg-neutral-800 rounded-lg shadow-lg">
+        <div className="w-full h-full">
           <div className="h-full bg-neutral-700 p-16 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
             <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
               <span className="text-gray-200 text-2xl">Journal Image</span>
@@ -43,19 +49,19 @@ function CreateJournal() {
             </label>
             <input type="file" id="fileInput" className="hidden" multiple />
           </div>
-
         </div>
-        <div className="w-full h-full">
+
+        <div className="w-full h-full flex flex-col">
           <div className="p-1">
             <input
-              type="text" className="w-96 border  rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
+              type="text" className="w-96 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500"
               placeholder="Journal Name"
             />
           </div>
 
           <div className="p-1">
             <textarea
-              className="h-60 w-10/12 border rounded-md py-2 px-4 bg-transparent  border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
+              className="w-full h-60 md:w-10/12 md:h-60 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500 resize-none"
               placeholder="Description"
             />
           </div>
@@ -63,12 +69,11 @@ function CreateJournal() {
           <div className="p-1">
             <span> Group Size: </span>
             <input
-              type="text" className="w-1/12 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100  focus:outline-none focus:border-pink-500"
-
+              type="text" className="w-2/12 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500"
             />
           </div>
-
         </div>
+
       </div>
 
       <div className=" pt-8 pb-4">
@@ -79,51 +84,61 @@ function CreateJournal() {
 
       {/* Photo Upload Boxes */}
 
-      <div className="w-full h-56 p-6 bg-neutral-800 rounded-lg shadow-lg flex flex-row space-x-3">
-        <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+      <div className="w-full h-full md:h-56 md:p-6 pl-4 pt-8 bg-neutral-800 rounded-lg shadow-lg grid grid-cols-2 md:flex md:flex-row md:space-x-3">
+        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
         </div>
 
-        <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
         </div>
 
-        <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
         </div>
 
-        <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
         </div>
 
-        <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
           <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
           <input type="file" id="fileInput" className="hidden" multiple />
         </div>
+
+        <div className="md:hidden w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+          </label>
+          <input type="file" id="fileInput" className="hidden" multiple />
+        </div>
+
       </div>
 
 
