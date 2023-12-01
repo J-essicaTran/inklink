@@ -1,9 +1,18 @@
+'use client';
 import React from 'react'
-import { signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { HiSearch, HiOutlineUserCircle } from "react-icons/hi";
 
 function Header() {
+
+  const { data: session } = useSession();
+
+  if (!session) {
+    redirect('/signin');
+    return null; // Ensure to return null after redirect
+  }
   return (
     <div className='flex justify-between items-center p-5 bg-[#222527]'> 
       <Link href="/">
@@ -23,10 +32,12 @@ function Header() {
 
       <div className="flex items-center">
         <button onClick={() => signOut()} className='bg-[#BA6CEB] hover:bg-[#b051eb] text-white font-semibold p-2 px-4 rounded-full'>Sign Out</button>
-        <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
+        <Link href="/profile">
+          <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
           <HiOutlineUserCircle className=" text-[25px]"/>
-          <p className="pl-1 font-semibold">Account</p>
+          <p className="pl-1 font-semibold">Profile</p>
         </div>
+        </Link>
       </div>
     </div>
   )
