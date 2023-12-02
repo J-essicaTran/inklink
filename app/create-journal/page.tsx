@@ -7,19 +7,29 @@ function CreateJournal() {
   const [journalName, setJournalName] = useState('');
   const [description, setDescription] = useState('');
   const [groupSize, setGroupSize] = useState('');
+  const [photo1, setPhoto1] = useState<File | null>(null);
 
-  // FOR DEBUGGING
+  /////////////////////////////// DEBUGGING ///////////////////////////////////
   useEffect(() => {
     console.log("Thumbnail changed: ", thumbnail);
   }, [thumbnail]) // called whenever 'thumbnail' changes
 
+  useEffect(() => {
+    console.log("Photo 1 changed: ", photo1);
+  }, [photo1]) // called whenever 'photo1' changes
+  /////////////////////////////////////////////////////////////////////////////
+
+  // Called whenever a file input is changed
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
-    console.log("handleFileChanged called!");
+    console.log("handleFileChange() called!");
     const selectedFile = e.target.files?.[0];
+    const inputId = e.target.id;
   
     if (selectedFile) {
-      // console.log("Selected file:", selectedFile);
-      setThumbnail(selectedFile!);
+      // console.log("Selected file:", selectedFile); // DEBUG LINE
+      if (inputId === 'fileInput') {
+        setThumbnail(selectedFile);
+      }
     }
   }
 
@@ -117,7 +127,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" />
+          <input type="file" id="fileInput" className="hidden" onChange={handleFileChange} />
         </div>
 
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
@@ -162,7 +172,7 @@ function CreateJournal() {
         <button type="button" className="ml-2 border-2 border-gray-600 rounded-full px-3 py-2 text-gray-400 cursor-pointer hover:bg-gray-600 hover:text-gray-200">
           Cancel
         </button>
-        <button type="button" onClick={() => console.log(journalName, description, groupSize)} className="ml-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+        <button type="button" onClick={() => console.log(thumbnail, journalName, description, groupSize)} className="ml-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
           Publish
         </button>
       </div>
