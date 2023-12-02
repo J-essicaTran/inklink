@@ -10,7 +10,7 @@ function Signin() {
   const router = useRouter();
   return (
     <div className="flex min-h-full h-screen items-center justify-center bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF]">
-      <div className="w-full rounded-xl shadow dark:border md:mt-0 sm:max-w-md xl:p-3 dark:bg-[#222527] dark:border-white">
+      <div className="w-full rounded-xl shadow border md:mt-0 sm:max-w-md xl:p-3 bg-[#222527] border-white">
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -34,7 +34,7 @@ function Signin() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="Email Address"
-                    className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 dark:placeholder-white/25"
+                    className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 placeholder-white/25"
                   />
                 </div>
               </div>
@@ -56,7 +56,7 @@ function Signin() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Password"
-                    className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 dark:placeholder-white/25"
+                    className="block w-full rounded-xl border-0 bg-white/5 py-1.5 pl-4 text-white shadow-sm ring-1 ring-inset ring-white/10 sm:text-sm sm:leading-6 placeholder-white/25"
                   />
                 </div>
               </div>
