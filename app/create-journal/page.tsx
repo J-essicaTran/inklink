@@ -42,10 +42,11 @@ function CreateJournal() {
 
   function addJournalToFirestoreDB() {
     const journalRef = addDoc(collection(firestoreDB, "journals"), {
-      thumbnail: null,
+      userID: null, // NEED USER ID
       name: journalName,
       description: description,
       groupSize: groupSize,
+      thumbnail: null,
       photo1: null,
       photo2: null,
       photo3: null,
