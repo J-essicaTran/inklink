@@ -1,5 +1,7 @@
 'use client';
 import { ChangeEvent, useEffect, useState } from "react";
+import { auth, db, firestoreDB } from '../firebase';
+import { doc, setDoc } from "firebase/firestore";
 
 
 function CreateJournal() {
@@ -31,6 +33,10 @@ function CreateJournal() {
         setThumbnail(selectedFile);
       }
     }
+  }
+
+  function addJournalToFirestoreDB() {
+
   }
 
   return (
