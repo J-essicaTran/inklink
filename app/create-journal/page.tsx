@@ -1,7 +1,7 @@
 'use client';
 import { ChangeEvent, useEffect, useState } from "react";
 import { auth, db, firestoreDB } from '../firebase';
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, addDoc, collection } from "firebase/firestore";
 
 
 function CreateJournal() {
@@ -36,7 +36,12 @@ function CreateJournal() {
   }
 
   function addJournalToFirestoreDB() {
-
+    const journalRef = addDoc(collection(firestoreDB, "journals"), {
+      thumbnail: null,
+      name: journalName,
+      description: description,
+      groupSize: groupSize
+    });
   }
 
   return (
