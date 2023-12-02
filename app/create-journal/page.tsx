@@ -1,19 +1,25 @@
 'use client';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 
 function CreateJournal() {
-  const [thumbnail, setThumbnail] = useState('');
+  const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [journalName, setJournalName] = useState('');
   const [description, setDescription] = useState('');
   const [groupSize, setGroupSize] = useState('');
+
+  // FOR DEBUGGING
+  useEffect(() => {
+    console.log("Thumbnail called: ", thumbnail);
+  }, [thumbnail]) // called whenever 'thumbnail' changes
 
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
     console.log("handleFileChanged called!");
     const selectedFile = e.target.files?.[0];
   
     if (selectedFile) {
-      console.log('Selected file:', selectedFile);
+      // console.log("Selected file:", selectedFile);
+      setThumbnail(selectedFile!);
     }
   }
 
