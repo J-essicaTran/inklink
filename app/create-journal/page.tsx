@@ -111,7 +111,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <input type="file" id="fileInput" className="hidden" />
         </div>
 
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
@@ -120,7 +120,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <input type="file" id="fileInput" className="hidden" />
         </div>
 
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
@@ -129,7 +129,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <input type="file" id="fileInput" className="hidden" />
         </div>
 
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
@@ -138,7 +138,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <input type="file" id="fileInput" className="hidden" />
         </div>
 
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
@@ -147,7 +147,7 @@ function CreateJournal() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
           </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <input type="file" id="fileInput" className="hidden" />
         </div>
       </div>
 
