@@ -10,6 +10,10 @@ function CreateJournal() {
   const [description, setDescription] = useState('');
   const [groupSize, setGroupSize] = useState('');
   const [photo1, setPhoto1] = useState<File | null>(null);
+  const [photo2, setPhoto2] = useState<File | null>(null);
+  const [photo3, setPhoto3] = useState<File | null>(null);
+  const [photo4, setPhoto4] = useState<File | null>(null);
+  const [photo5, setPhoto5] = useState<File | null>(null);
 
   /////////////////////////////// DEBUGGING ///////////////////////////////////
   useEffect(() => {
@@ -24,13 +28,14 @@ function CreateJournal() {
   // Called whenever a file input is changed
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
     console.log("handleFileChange() called!");
-    const selectedFile = e.target.files?.[0];
-    const inputId = e.target.id;
+    const selectedFile = e.target.files?.[0]; // Grab the selected file
+    const inputId = e.target.id; // Get id of input element
   
+    // Check if file is not null
     if (selectedFile) {
       // console.log("Selected file:", selectedFile); // DEBUG LINE
       if (inputId === 'fileInput') {
-        setThumbnail(selectedFile);
+        setThumbnail(selectedFile); // Set the thumbnail variable to the selected image
       }
     }
   }
@@ -40,7 +45,12 @@ function CreateJournal() {
       thumbnail: null,
       name: journalName,
       description: description,
-      groupSize: groupSize
+      groupSize: groupSize,
+      photo1: null,
+      photo2: null,
+      photo3: null,
+      photo4: null,
+      photo5: null
     });
   }
 
