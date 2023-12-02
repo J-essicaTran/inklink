@@ -14,11 +14,6 @@ function Signin() {
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
           
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-            {/* <div className="flex items-center justify-center">
-              <h1 className="text-white text-4xl font-thin">INK</h1>
-              <img className="-ml-2" src="./logo.png" alt="logo" width={75} height={75}/>
-              <h1 className="text-white text-4xl -ml-2 font-thin">LINK</h1>
-            </div> */}
             <Logo/>
           </div>
 
@@ -40,13 +35,6 @@ function Signin() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between">
-                  {/* <div className="text-sm">
-                    <div onClick={() => router.push('/forgot-password')} className="cursor-pointer font-semibold text-indigo-400 hover:text-indigo-300">
-                      Forgot password?
-                    </div>
-                  </div> */}
-                </div>
                 <div className="mt-2">
                   <input
                     id="password"
