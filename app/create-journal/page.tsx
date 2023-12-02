@@ -10,7 +10,7 @@ function CreateJournal() {
 
   // FOR DEBUGGING
   useEffect(() => {
-    console.log("Thumbnail called: ", thumbnail);
+    console.log("Thumbnail changed: ", thumbnail);
   }, [thumbnail]) // called whenever 'thumbnail' changes
 
   function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
