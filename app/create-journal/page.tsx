@@ -1,11 +1,21 @@
 'use client';
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+
 
 function CreateJournal() {
   const [thumbnail, setThumbnail] = useState('');
   const [journalName, setJournalName] = useState('');
   const [description, setDescription] = useState('');
   const [groupSize, setGroupSize] = useState('');
+
+  function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
+    console.log("handleFileChanged called!");
+    const selectedFile = e.target.files?.[0];
+  
+    if (selectedFile) {
+      console.log('Selected file:', selectedFile);
+    }
+  }
 
   return (
     <div className="h-screen w-screen p-2 m-0">
@@ -53,7 +63,7 @@ function CreateJournal() {
               type="file"
               id="fileInput"
               className="hidden"
-              onChange={(e) => setThumbnail(e.target.value)}
+              onChange={handleFileChange}
             />
           </div>
 
