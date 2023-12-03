@@ -22,16 +22,14 @@ export default function Home() {
   }
   
   return (
-    <html lang="en">
-      <body>
-        <Header/>
-        <Navigation/>
-        <div className="flex flex-col items-center justify-center p-8 pt-20">
-          <div className='text-white'>Email: {session?.user?.email}</div>
-          <button className='bg-white text-black p-2 px-4 mt-5 rounded-full hover:bg-[#6b7ced]' onClick={() => signOut()}>Logout</button>
-        </div>
-      </body>
-    </html>
+    <div>
+      <Header/>
+      <Navigation/>
+      <div className="flex flex-col items-center justify-center p-8 pt-20">
+        <div className='text-white'>Email: {session?.user?.email}</div>
+        <button className='bg-white text-black p-2 px-4 mt-5 rounded-full hover:bg-[#6b7ced]' onClick={() => signOut()}>Logout</button>
+      </div>
+    </div>
   )
 }
 
