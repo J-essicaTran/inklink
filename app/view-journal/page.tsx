@@ -4,7 +4,7 @@ function ViewJournal() {
   return (
     <div>
       <Header />
-      <div className="h-screen w-screen p-2 m-0">
+      <div className="h-screen p-2 m-0">
         <div className="pt-4 pb-1">
           <div className="border-2 border-purple-500 rounded-md px-3 py-2 cursor-default bg-purple-500 text-purple-100">
             Journal Name
