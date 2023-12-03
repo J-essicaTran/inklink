@@ -22,13 +22,11 @@ export default function Home() {
   }
   
   return (
-    <html lang="en">
-      <body>
+    <div>
         <Header/>
         {/* remove navigation to test  vv*/}
         <Navigation/>
         <div className="flex flex-col items-center justify-center p-8 pt-20">
-
 
         <div>
           <div className="w-full rounded-lg bg-neutral-800 p-12 flex flex-col sm:flex-row items-start justify-between">
@@ -194,15 +192,10 @@ export default function Home() {
           </div>
         </div>
 
-        
         <div className='text-white'>Email: {session?.user?.email}</div>
           <button className='bg-white text-black p-2 px-4 mt-5 rounded-full hover:bg-[#6b7ced]' onClick={() => signOut()}>Logout</button>
-        
-        
-        
         </div>
-      </body>
-    </html>
+      </div>
   )
 }
 
