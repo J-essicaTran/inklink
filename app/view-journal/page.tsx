@@ -1,21 +1,27 @@
 'use client';
 import Logo from './../components/Logo'
+import Link from 'next/link'
 
 function ViewJournal() {
   return (
     <div className="h-screen w-screen p-2 m-0">
-      <div className="p-1 pb-3 flex flex-row">
-        <div className="self-center flex-grow">
+      <div className="p-1 pb-3 flex flex-row justify-between items-center">
+        <div className="ml-3">
           <Logo/>
         </div>
 
-        <button type="button" className="mr-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
-          <img src="./profile_icon.png" alt="profile icon" />
-        </button>
+        <div className="flex">
+          <Link href="/profile" className="mt-2 mr-2 max-h-12 flex flex-row border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+            <img src="./profile_icon.png" alt="profile icon" />
+            <span className="hidden md:block">Profile</span>
+          </Link>
 
-        <button type="button" className="ml-2 mr-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
-          <img src="./exit_icon.png" alt="exit icon" />
-        </button>
+          <Link href="/" className="mt-2 ml-2 mr-2 max-h-12 flex flex-row border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200">
+            <img src="./exit_icon.png" alt="exit icon" /> 
+            <span className="hidden md:block">Exit</span>
+          </Link>
+        </div>
+        
 
       </div>
 
@@ -23,10 +29,10 @@ function ViewJournal() {
         <div className="h-1 w-full bg-white rounded-full"> </div>
       </div>
 
-      <div className="pt-4 pb-4">
-        <button type="button" className="border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-default hover:bg-purple-500 hover:text-purple-200">
-          <span>Journal Name</span>
-        </button>
+      <div className="pt-4 pb-1">
+        <div className="border-2 border-purple-500 rounded-md px-3 py-2 cursor-default bg-purple-500 text-purple-100">
+          Journal Name
+        </div>
       </div>
 
 
@@ -61,7 +67,7 @@ function ViewJournal() {
 
       {/* Photo Upload Boxes */}
 
-      <div className="w-full h-72 p-6 bg-neutral-800 rounded-lg shadow-lg flex flex-row space-x-3">
+      <div className="w-full h-full md:h-56 md:p-6 pl-4 pt-8 bg-neutral-800 rounded-lg shadow-lg grid grid-cols-2 md:flex md:flex-row md:space-x-3">
         <div className="w-full h-full bg-neutral-700 p-8 text-center rounded-lg border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" >
           <img src="" alt="" />
           

@@ -37,7 +37,7 @@ function CreateJournal() {
 
 
       <div className="flex flex-col md:flex-row gap-5 w-full h-full md:h-96 p-6 bg-neutral-800 rounded-lg shadow-lg">
-        <div className="w-full h-full">
+        <div className="w-full md:w-1/3 h-full">
           <div className="h-full bg-neutral-700 p-16 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-500 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
             <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
               <span className="text-gray-200 text-2xl">Journal Image</span>
@@ -84,61 +84,62 @@ function CreateJournal() {
 
       {/* Photo Upload Boxes */}
 
-      <div className="w-full h-full md:h-56 md:p-6 pl-4 pt-8 bg-neutral-800 rounded-lg shadow-lg grid grid-cols-2 md:flex md:flex-row md:space-x-3">
-        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
-        </div>
+      <div className= "w-full h-full md:h-60 md:p-6 pl-4 pt-8 bg-neutral-800 rounded-lg shadow-lg overflow-x-auto">
+        <div className="w-fit grid-cols-2 md:flex md:flex-row md:space-x-3">
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
 
-        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
-        </div>
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-12  text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
 
-        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
-        </div>
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-full text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
 
-        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
-        </div>
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
 
-        <div className="w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
-        </div>
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
 
-        <div className="md:hidden w-60 h-60 md:w-full md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
-          <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
-            <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-          </label>
-          <input type="file" id="fileInput" className="hidden" multiple />
+          <div className="w-60 h-60 md:w-96 md:h-full bg-neutral-700 p-8 text-center rounded-lg border-dashed border-2 border-gray-300 hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md" id="dropzone">
+            <label htmlFor="fileInput" className="cursor-pointer flex flex-col items-center space-y-2">
+              <svg className="m-16 md:m-7 w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </label>
+            <input type="file" id="fileInput" className="hidden" multiple />
+          </div>
         </div>
-
       </div>
 
 
