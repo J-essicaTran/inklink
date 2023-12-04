@@ -3,8 +3,12 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { auth, db, firestoreDB } from '../firebase';
 import { doc, setDoc, addDoc, collection } from "firebase/firestore";
 import Header from "../components/Header"
+import { useSession } from "next-auth/react";
 
 function CreateJournal() {
+  const { data: session } = useSession();
+  const email = session?.user?.email;
+
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const [journalName, setJournalName] = useState('');
   const [description, setDescription] = useState('');
@@ -42,7 +46,7 @@ function CreateJournal() {
 
   function addJournalToFirestoreDB() {
     const journalRef = addDoc(collection(firestoreDB, "journals"), {
-      userID: null, // NEED USER ID
+      userEmail: email, // NEED USER ID
       name: journalName,
       description: description,
       groupSize: groupSize,
@@ -51,7 +55,10 @@ function CreateJournal() {
       photo2: null,
       photo3: null,
       photo4: null,
-      photo5: null
+      photo5: null,
+      photo6: null,
+      photo7: null,
+      photo8: null
     });
   }
 
