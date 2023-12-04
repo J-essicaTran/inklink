@@ -79,7 +79,7 @@ function Signup() {
   // Called after successful user signup
   function AddUserToFirestoreDB(uid: string, email: string, username: string) {
     // Usage: setDoc(doc(DATABASE, COLLECTION_NAME, DOCUMENT_NAME))
-    setDoc(doc(firestoreDB, 'users', uid), {
+    setDoc(doc(firestoreDB, 'users', email), {
       email: email,
       username: username
     });
