@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div>
       <Header/>
-      <Navigation/>
+      <Navigation/> 
       <div className="flex flex-col items-center justify-center my-10">
         <div className='text-white'>
           Email: {session?.user?.email}
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="mt-10">
+        <div className="mt-5">
           <div className="w-full rounded-lg bg-neutral-800 p-12 flex flex-col sm:flex-row items-start justify-between">
             <button type="button" className="border-2 border-purple-500 rounded-full px-5 py-2 text-purple-300 cursor-default hover:bg-purple-500 hover:text-purple-200">
             <span>Your Journals</span>

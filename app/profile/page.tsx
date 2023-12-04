@@ -4,9 +4,9 @@ function Profile() {
   return (
     <div>
       <Header />
-      <div className="flex flex-col items-center justify-center my-10">
+      <div className="flex flex-col items-center justify-center mt-10">
         <div>
-          <div className="w-fit flex items-center my-10 pl-5 pr-20 py-5 bg-neutral-800 rounded-lg">
+          <div className="w-fit flex items-center mb-5 pl-5 pr-20 py-5 bg-neutral-800 rounded-lg">
             <div className="rounded-full h-20 w-20 bg-white flex-shrink-0 mr-6">
               {/* idk how to add a picture here  */}
             </div>
