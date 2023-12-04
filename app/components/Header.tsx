@@ -4,10 +4,12 @@ import { useSession, signOut } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { HiSearch, HiOutlineUserCircle } from "react-icons/hi";
+import { useRouter } from 'next/navigation';
 
 function Header() {
 
   const { data: session } = useSession();
+  const router = useRouter();
 
   if (!session) {
     redirect('/signin');
@@ -32,12 +34,17 @@ function Header() {
 
       <div className="flex items-center">
         <button onClick={() => signOut()} className='bg-[#BA6CEB] hover:bg-[#b051eb] text-white font-semibold p-2 px-4 rounded-full'>Sign Out</button>
-        <Link href="/profile">
+        <button onClick={() => router.push('/'+session?.user?.email)} className='flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full'>
+          <HiOutlineUserCircle className=" text-[25px]"/>
+          <p className="pl-1 font-semibold">Profile</p>
+        </button>
+        
+        {/* <Link href="/profile">
           <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
           <HiOutlineUserCircle className=" text-[25px]"/>
           <p className="pl-1 font-semibold">Profile</p>
         </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   )
