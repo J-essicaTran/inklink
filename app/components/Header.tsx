@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { HiSearch, HiOutlineUserCircle } from "react-icons/hi";
 import { PiSignOutBold } from "react-icons/pi";
+import { FiPlusCircle } from "react-icons/fi";
 
 function Header() {
 
@@ -41,11 +42,18 @@ function Header() {
             <PiSignOutBold className="text-[25px]"/>
           </button>
 
+          <Link href="/create-journal">
+          <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
+            <FiPlusCircle className="text-[25px]"/>
+          </div>
+          </Link>
+
           <Link href="/profile">
             <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
               <HiOutlineUserCircle className="text-[25px]"/>
             </div>
           </Link>
+
         </div>
       </div>
       {/* End of Mobile View */}
@@ -63,12 +71,20 @@ function Header() {
           <p className="pl-1 font-semibold text-white">Sign Out</p>
         </button>
 
+        <Link href="/create-journal">
+          <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
+            <FiPlusCircle className="text-[25px]"/>
+            <p className="pl-1 font-semibold">Create Journal</p>
+          </div>
+        </Link>
+
         <Link href="/profile">
           <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
             <HiOutlineUserCircle className="text-[25px]"/>
             <p className="pl-1 font-semibold">Profile</p>
           </div>
         </Link>
+
       </div>
     </div>
   )
