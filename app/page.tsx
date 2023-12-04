@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <Header/>
       <Navigation/>
-      <div className="flex flex-col items-center justify-center p-8 pt-10">
+      <div className="flex flex-col items-center justify-center my-10">
         <div className='text-white'>
           Email: {session?.user?.email}
         </div>
@@ -166,7 +166,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        
         </div>
       </div>
     </div>
