@@ -1,12 +1,12 @@
 import Header from "../components/Header"
 
-function Profile() {
+function AdminViewUser() {
   return (
     <div>
       <Header />
-      Profile
+      Admin View User
     </div>
   )
 }
 
-export default Profile
+export default AdminViewUser

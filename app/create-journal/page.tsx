@@ -1,6 +1,60 @@
-import Header from "../components/Header";
+'use client';
+import { ChangeEvent, useEffect, useState } from "react";
+import { auth, db, firestoreDB } from '../firebase';
+import { doc, setDoc, addDoc, collection } from "firebase/firestore";
+import Header from "../components/Header"
 
 function CreateJournal() {
+  const [thumbnail, setThumbnail] = useState<File | null>(null);
+  const [journalName, setJournalName] = useState('');
+  const [description, setDescription] = useState('');
+  const [groupSize, setGroupSize] = useState('');
+  const [photo1, setPhoto1] = useState<File | null>(null);
+  const [photo2, setPhoto2] = useState<File | null>(null);
+  const [photo3, setPhoto3] = useState<File | null>(null);
+  const [photo4, setPhoto4] = useState<File | null>(null);
+  const [photo5, setPhoto5] = useState<File | null>(null);
+
+  /////////////////////////////// DEBUGGING ///////////////////////////////////
+  useEffect(() => {
+    console.log("Thumbnail changed: ", thumbnail);
+  }, [thumbnail]) // called whenever 'thumbnail' changes
+
+  useEffect(() => {
+    console.log("Photo 1 changed: ", photo1);
+  }, [photo1]) // called whenever 'photo1' changes
+  /////////////////////////////////////////////////////////////////////////////
+
+  // Called whenever a file input is changed
+  function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
+    console.log("handleFileChange() called!");
+    const selectedFile = e.target.files?.[0]; // Grab the selected file
+    const inputId = e.target.id; // Get id of input element
+  
+    // Check if file is not null
+    if (selectedFile) {
+      // console.log("Selected file:", selectedFile); // DEBUG LINE
+      if (inputId === 'fileInput') {
+        setThumbnail(selectedFile); // Set the thumbnail variable to the selected image
+      }
+    }
+  }
+
+  function addJournalToFirestoreDB() {
+    const journalRef = addDoc(collection(firestoreDB, "journals"), {
+      userID: null, // NEED USER ID
+      name: journalName,
+      description: description,
+      groupSize: groupSize,
+      thumbnail: null,
+      photo1: null,
+      photo2: null,
+      photo3: null,
+      photo4: null,
+      photo5: null
+    });
+  }
+
   return (
     <div>
       <Header />
@@ -10,7 +64,6 @@ function CreateJournal() {
             New Journal
           </div>
         </div>
-
         <div className="flex flex-col md:flex-row gap-5 w-full h-full md:h-96 p-6 bg-neutral-800 rounded-lg shadow-lg">
           <div className="w-full md:w-1/3 h-full">
             <div
@@ -42,7 +95,7 @@ function CreateJournal() {
                   (or click to select)
                 </span>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" onChange={handleFileChange} />
             </div>
           </div>
 
@@ -52,6 +105,7 @@ function CreateJournal() {
                 type="text"
                 className="w-96 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500"
                 placeholder="Journal Name"
+                onChange={(e) => setJournalName(e.target.value)}
               />
             </div>
 
@@ -59,6 +113,7 @@ function CreateJournal() {
               <textarea
                 className="w-full h-60 md:w-10/12 md:h-60 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500 resize-none"
                 placeholder="Description"
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
 
@@ -67,6 +122,7 @@ function CreateJournal() {
               <input
                 type="text"
                 className="w-1/12 border rounded-md py-2 px-4 bg-transparent border-gray-300 text-gray-100 focus:outline-none focus:border-pink-500"
+                onChange={(e) => setGroupSize(e.target.value)}
               />
             </div>
           </div>
@@ -107,7 +163,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -132,7 +188,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -157,7 +213,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -182,7 +238,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -207,7 +263,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -232,7 +288,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -257,7 +313,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             <div
@@ -282,7 +338,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" multiple />
+              <input type="file" id="fileInput" className="hidden" />
             </div>
 
             {/* Can add more or remove */}
@@ -292,8 +348,9 @@ function CreateJournal() {
         <div className="p-3 flex flex-row-reverse">
           <button
             type="button"
+            onClick={() => addJournalToFirestoreDB()}
             className="ml-2 border-2 border-purple-500 rounded-full px-3 py-2 text-purple-300 cursor-pointer hover:bg-purple-500 hover:text-purple-200"
-          >
+           >
             Publish
           </button>
           <button

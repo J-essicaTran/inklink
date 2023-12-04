@@ -3,6 +3,7 @@ import React from 'react'
 import { useSession, signOut } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { HiSearch, HiOutlineUserCircle } from "react-icons/hi";
 import { PiSignOutBold } from "react-icons/pi";
 import { FiPlusCircle } from "react-icons/fi";
@@ -10,6 +11,7 @@ import { FiPlusCircle } from "react-icons/fi";
 function Header() {
 
   const { data: session } = useSession();
+  const router = useRouter();
 
   if (!session) {
     redirect('/signin');
@@ -48,12 +50,9 @@ function Header() {
           </div>
           </Link>
 
-          <Link href="/profile">
-            <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
-              <HiOutlineUserCircle className="text-[25px]"/>
-            </div>
-          </Link>
-
+          <button onClick={() => router.push('/'+session?.user?.email)} className='flex h-10 bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full'>
+            <HiOutlineUserCircle className="text-[25px]"/>
+          </button>
         </div>
       </div>
       {/* End of Mobile View */}
@@ -77,14 +76,11 @@ function Header() {
             <p className="pl-1 font-semibold">Create Journal</p>
           </div>
         </Link>
-
-        <Link href="/profile">
-          <div className="flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full">
-            <HiOutlineUserCircle className="text-[25px]"/>
-            <p className="pl-1 font-semibold">Profile</p>
-          </div>
-        </Link>
-
+        
+        <button onClick={() => router.push('/'+session?.user?.email)} className='flex items-center bg-white border-solid border-2 border-[#BA6CEB] text-[#BA6CEB] py-1.5 px-4 ml-5 rounded-full'>
+          <HiOutlineUserCircle className=" text-[25px]"/>
+          <p className="pl-1 font-semibold">Profile</p>
+        </button>
       </div>
     </div>
   )
