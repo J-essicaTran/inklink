@@ -1,6 +1,11 @@
+import Header from "../components/Header"
+
 function ViewJournalImage() {
   return (
-    <div>View Journal Image</div>
+    <div>
+      <Header />
+      View Journal Image
+    </div>
   )
 }
 

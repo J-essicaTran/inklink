@@ -1,6 +1,11 @@
+import Header from "../components/Header"
+
 function SearchUser() {
   return (
-    <div>Search User</div>
+    <div>
+      <Header />
+      Search User
+    </div>
   )
 }
 
