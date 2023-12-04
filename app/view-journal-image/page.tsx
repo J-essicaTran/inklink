@@ -2,8 +2,12 @@ import Header from "../components/Header"
 
 function ViewJournalImage() {
   return (
-    <div>
+    <div className="h-screen w-screen">
       <Header />
+
+      <div className="">
+        
+      </div>
       View Journal Image
     </div>
   )
