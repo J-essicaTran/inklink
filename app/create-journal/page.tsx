@@ -1,7 +1,8 @@
 'use client';
 import { ChangeEvent, useEffect, useState } from "react";
-import { auth, db, firestoreDB } from '../firebase';
+import { auth, db, firestoreDB, storage } from '../firebase';
 import { doc, setDoc, addDoc, collection } from "firebase/firestore";
+import { getStorage, ref } from "firebase/storage";
 import Header from "../components/Header"
 import { useSession } from "next-auth/react";
 
