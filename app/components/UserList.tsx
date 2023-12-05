@@ -31,7 +31,7 @@ function UserList() {
     });
 
   return (
-    <div className="m-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+    <div className="m-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {sortedDocs.map((doc) => (
             <div key={doc.id} className="flex flex-col p-5 bg-neutral-800 rounded-lg border-2 border-white hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md">
                 <button onClick={() => router.push('/' + doc.data().email)}>
