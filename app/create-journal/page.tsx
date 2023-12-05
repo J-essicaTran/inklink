@@ -37,27 +37,27 @@ function CreateJournal() {
 
   useEffect(() => {
     console.log("Photo 3 changed: ", photo3);
-  }, [photo1]) // called whenever 'photo3' changes
+  }, [photo3]) // called whenever 'photo3' changes
 
   useEffect(() => {
     console.log("Photo 4 changed: ", photo4);
-  }, [photo1]) // called whenever 'photo4' changes
+  }, [photo4]) // called whenever 'photo4' changes
 
   useEffect(() => {
     console.log("Photo 5 changed: ", photo5);
-  }, [photo1]) // called whenever 'photo5' changes
+  }, [photo5]) // called whenever 'photo5' changes
 
   useEffect(() => {
     console.log("Photo 6 changed: ", photo6);
-  }, [photo1]) // called whenever 'photo6' changes
+  }, [photo6]) // called whenever 'photo6' changes
 
   useEffect(() => {
     console.log("Photo 7 changed: ", photo7);
-  }, [photo1]) // called whenever 'photo7' changes
+  }, [photo7]) // called whenever 'photo7' changes
 
   useEffect(() => {
     console.log("Photo 8 changed: ", photo8);
-  }, [photo1]) // called whenever 'photo8' changes
+  }, [photo8]) // called whenever 'photo8' changes
   /////////////////////////////////////////////////////////////////////////////
 
   // Called whenever a file input is changed
@@ -277,7 +277,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo3Input" name="photo3Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -302,7 +302,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo4Input" name="photo4Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -310,7 +310,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo5Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -327,7 +327,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo5Input" name="photo5Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -335,7 +335,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo6Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -352,7 +352,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo6Input" name="photo6Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -360,7 +360,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo7Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -377,7 +377,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo7Input" name="photo7Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -385,7 +385,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo8Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -402,7 +402,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" className="hidden" />
+              <input type="file" id="photo8Input" name="photo8Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             {/* Can add more or remove */}
