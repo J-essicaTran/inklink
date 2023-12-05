@@ -18,6 +18,9 @@ function CreateJournal() {
   const [photo3, setPhoto3] = useState<File | null>(null);
   const [photo4, setPhoto4] = useState<File | null>(null);
   const [photo5, setPhoto5] = useState<File | null>(null);
+  const [photo6, setPhoto6] = useState<File | null>(null);
+  const [photo7, setPhoto7] = useState<File | null>(null);
+  const [photo8, setPhoto8] = useState<File | null>(null);
 
   /////////////////////////////// DEBUGGING ///////////////////////////////////
   useEffect(() => {
@@ -27,6 +30,34 @@ function CreateJournal() {
   useEffect(() => {
     console.log("Photo 1 changed: ", photo1);
   }, [photo1]) // called whenever 'photo1' changes
+
+  useEffect(() => {
+    console.log("Photo 2 changed: ", photo2);
+  }, [photo2]) // called whenever 'photo2' changes
+
+  useEffect(() => {
+    console.log("Photo 3 changed: ", photo3);
+  }, [photo1]) // called whenever 'photo3' changes
+
+  useEffect(() => {
+    console.log("Photo 4 changed: ", photo4);
+  }, [photo1]) // called whenever 'photo4' changes
+
+  useEffect(() => {
+    console.log("Photo 5 changed: ", photo5);
+  }, [photo1]) // called whenever 'photo5' changes
+
+  useEffect(() => {
+    console.log("Photo 6 changed: ", photo6);
+  }, [photo1]) // called whenever 'photo6' changes
+
+  useEffect(() => {
+    console.log("Photo 7 changed: ", photo7);
+  }, [photo1]) // called whenever 'photo7' changes
+
+  useEffect(() => {
+    console.log("Photo 8 changed: ", photo8);
+  }, [photo1]) // called whenever 'photo8' changes
   /////////////////////////////////////////////////////////////////////////////
 
   // Called whenever a file input is changed
@@ -45,6 +76,27 @@ function CreateJournal() {
       }
       else if (inputName === 'photo1Input') {
         setPhoto1(target.files[0]);
+      }
+      else if (inputName === 'photo2Input') {
+        setPhoto2(target.files[0]);
+      }
+      else if (inputName === 'photo3Input') {
+        setPhoto3(target.files[0]);
+      }
+      else if (inputName === 'photo4Input') {
+        setPhoto4(target.files[0]);
+      }
+      else if (inputName === 'photo5Input') {
+        setPhoto5(target.files[0]);
+      }
+      else if (inputName === 'photo6Input') {
+        setPhoto6(target.files[0]);
+      }
+      else if (inputName === 'photo7Input') {
+        setPhoto7(target.files[0]);
+      }
+      else if (inputName === 'photo8Input') {
+        setPhoto8(target.files[0]);
       }
     }
   }
@@ -183,7 +235,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo2Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -200,7 +252,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" id="photo2Input" name="photo2Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -208,7 +260,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo3Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -233,7 +285,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo4Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
