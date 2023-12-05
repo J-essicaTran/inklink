@@ -160,7 +160,7 @@ function CreateJournal() {
       photo7: null,
       photo8: null
     });
-    console.log("Joural created!")
+    console.log("Journal created!")
   }
 
   return (
