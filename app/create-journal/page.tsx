@@ -2,7 +2,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { auth, db, firestoreDB, storage } from '../firebase';
 import { doc, setDoc, addDoc, collection } from "firebase/firestore";
-import { getStorage, ref } from "firebase/storage";
+import { ref, uploadBytes } from "firebase/storage";
 import Header from "../components/Header"
 import { useSession } from "next-auth/react";
 
@@ -102,7 +102,20 @@ function CreateJournal() {
     }
   }
 
+  // Uploads images to Cloud Storage bucket
+  function uploadImages() {
+    // Create references to the image (assuming the input image is not null)
+    const file: File = thumbnail!;
+    const storageRef = ref(storage, 'journal-images/' + email + '/' + file?.name);
+    const blob = new Blob([file]);
+
+    uploadBytes(storageRef, file).then((snapshot) => {
+      console.log('Uploaded a blob or file!');
+    });
+  }
+
   function addJournalToFirestoreDB() {
+    uploadImages();
     const journalRef = addDoc(collection(firestoreDB, "journals"), {
       userEmail: email, // NEED USER ID
       name: journalName,
