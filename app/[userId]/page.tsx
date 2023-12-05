@@ -1,19 +1,47 @@
+'use client'
+import React, { useEffect, useState } from 'react'
+import { firestoreDB } from '../firebase';
+import { doc, getDoc, DocumentData } from "firebase/firestore"
 import Header from '../components/Header'
+import UserInfo from '../components/UserInfo'
 
-function Profile() {
-  return (
+function Profile({params} : {params:any}) {
+
+    const [userInfo, setUserInfo] = useState<DocumentData | undefined>();
+    
+    useEffect(() => {
+        console.log(params.userId.replace('%40', '@'));
+        if(params) {
+            getUserInfo(params.userId.replace('%40', '@'));
+        }
+    }, [params])
+
+    const getUserInfo = async (email: string) => {
+        const docRef = doc(firestoreDB, "users", email);
+        const docSnap = await getDoc(docRef);
+
+        if(docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+            setUserInfo(docSnap.data());
+        }
+        else {
+            console.log("No such document!");
+        }
+    }
+
+    return (
     <div>
       <Header />
       <div className="flex flex-col items-center justify-center mt-10">
         <div>
           <div className="w-fit flex items-center mb-5 pl-5 pr-20 py-5 bg-neutral-800 rounded-lg">
-            <div className="rounded-full h-20 w-20 bg-white flex-shrink-0 mr-6">
-              {/* idk how to add a picture here  */}
+            <div className="bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5">
+                <img className="w-12" src="/logo.png" alt="logo" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-purple-500">Username
-                {/* i also don't know how to make sure that we get the person's actual usernameentered here */}
-              </h2>
+              {userInfo?
+                <UserInfo userInfo={userInfo} />
+              : null}
             </div>
           </div>
 
