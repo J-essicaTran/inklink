@@ -104,9 +104,6 @@ function CreateJournal() {
 
   // Uploads images to Cloud Storage bucket
   function uploadImages() {
-    // Create directory for specific journal
-    let folderPath = 'journal-images/' + email + '/' + journalName + '/';
-
     // Create references to the images (assuming the input image is not null)
     const thumbnailRef: File = thumbnail === null ? null!: thumbnail;
     const photo1Ref: File = photo1 === null ? null!: photo1;
@@ -137,7 +134,8 @@ function CreateJournal() {
       if (filesRefs[i] === null) {
         continue;
       }
-      folderPath += filesRefs[i].name;
+      // Specify directory of where to store images
+      let folderPath = 'journal-images/' + email + '/' + journalName + '/' + filesRefs[i].name;
       const storageRef = ref(storage, folderPath);
       uploadBytes(storageRef, blobs[i]).then((snapshot) => {
       console.log('Uploaded a blob or file!');
