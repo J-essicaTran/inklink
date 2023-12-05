@@ -59,7 +59,7 @@ function Header() {
 
       <div className="relative max-md:w-full text-gray-600">
         <input type="search" name="search" placeholder="Search" className="bg-white border-solid border-2 border-[#BA6CEB] h-10 px-5 pr-10 rounded-full text-sm focus:outline-none w-full md:w-72 lg:w-96"/>
-        <button type="submit" className="absolute right-0 top-0 mt-2 mr-4">
+        <button onClick={() => router.push('/search-user')} type="submit" className="absolute right-0 top-0 mt-2 mr-4">
           <HiSearch className='text-[25px] text-gray-500'/>
         </button>
       </div>
