@@ -16,9 +16,21 @@ function UserList() {
         return <p>Error: {error.message}</p>;
     }
 
+    // Ensure data is not undefined before processing
+    if (!data) {
+        return <p>No data available</p>;
+    }
+
+    // Sort the data.docs array alphabetically by the username property
+    const sortedDocs = data.docs.slice().sort((a, b) => {
+        const usernameA = a.data().username.toLowerCase();
+        const usernameB = b.data().username.toLowerCase();
+        return usernameA.localeCompare(usernameB);
+    });
+
   return (
     <div className="m-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {data?.docs.map((doc) => (
+        {sortedDocs.map((doc) => (
             <div key={doc.id} className="flex flex-col mb-5 p-5 bg-neutral-800 rounded-lg border-2 border-white hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md">
                 <div className="flex mb-10">
                     <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
