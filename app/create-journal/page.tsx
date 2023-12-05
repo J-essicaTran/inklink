@@ -30,16 +30,21 @@ function CreateJournal() {
   /////////////////////////////////////////////////////////////////////////////
 
   // Called whenever a file input is changed
-  function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     console.log("handleFileChange() called!");
-    const selectedFile = e.target.files?.[0]; // Grab the selected file
-    const inputId = e.target.id; // Get id of input element
-  
-    // Check if file is not null
-    if (selectedFile) {
-      // console.log("Selected file:", selectedFile); // DEBUG LINE
-      if (inputId === 'fileInput') {
-        setThumbnail(selectedFile); // Set the thumbnail variable to the selected image
+    const target = e.target as HTMLInputElement & {
+      files: FileList;
+    }
+    console.log('Target', target.files);
+
+    const inputName = target.name;
+    console.log("File Input name: ", inputName);
+    if (target.files.length > 0) {
+      if (inputName === 'thumbnailInput') {
+        setThumbnail(target.files[0]);
+      }
+      else if (inputName === 'photo1Input') {
+        setPhoto1(target.files[0]);
       }
     }
   }
@@ -78,7 +83,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="thumbnailInput"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <span className="text-gray-200 text-2xl">Journal Image</span>
@@ -102,7 +107,7 @@ function CreateJournal() {
                   (or click to select)
                 </span>
               </label>
-              <input type="file" id="fileInput" className="hidden" onChange={handleFileChange} />
+              <input type="file" id="thumbnailInput" name="thumbnailInput" className="hidden" onChange={handleFileChange} />
             </div>
           </div>
 
@@ -153,7 +158,7 @@ function CreateJournal() {
               id="dropzone"
             >
               <label
-                htmlFor="fileInput"
+                htmlFor="photo1Input"
                 className="cursor-pointer flex flex-col items-center space-y-2"
               >
                 <svg
@@ -170,7 +175,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" onChange={handleFileChange} />
+              <input type="file" id="photo1Input" name="photo1Input" className="hidden" onChange={handleFileChange} />
             </div>
 
             <div
@@ -220,7 +225,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             <div
@@ -245,7 +250,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             <div
@@ -270,7 +275,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             <div
@@ -295,7 +300,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             <div
@@ -320,7 +325,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             <div
@@ -345,7 +350,7 @@ function CreateJournal() {
                   ></path>
                 </svg>
               </label>
-              <input type="file" id="fileInput" className="hidden" />
+              <input type="file" className="hidden" />
             </div>
 
             {/* Can add more or remove */}
