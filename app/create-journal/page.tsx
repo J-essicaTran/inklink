@@ -2,7 +2,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { auth, db, firestoreDB, storage } from '../firebase';
 import { doc, setDoc, addDoc, collection } from "firebase/firestore";
-import { ref, uploadBytes } from "firebase/storage";
+import { ref, uploadBytes ,getDownloadURL } from "firebase/storage";
 import Header from "../components/Header"
 import { useSession } from "next-auth/react";
 
@@ -128,6 +128,7 @@ function CreateJournal() {
     const photo8Blob = new Blob([photo8Ref]);
     const blobs = [thumbnailBlob, photo1Blob, photo2Blob, photo3Blob, photo4Blob, photo5Blob, photo6Blob, photo7Blob, photo8Blob];
 
+    const imageURLs: string[] = [];
     // Both fileRef and blobs have the same length
     for (let i = 0; i < filesRefs.length; i++) {
       // If the file is null, just skip the iteration (that is, don't upload the null file)
@@ -138,9 +139,16 @@ function CreateJournal() {
       let folderPath = 'journal-images/' + email + '/' + journalName + '/' + filesRefs[i].name;
       const storageRef = ref(storage, folderPath);
       uploadBytes(storageRef, blobs[i]).then((snapshot) => {
-      console.log('Uploaded a blob or file!');
-    });
+        console.log('Uploaded a blob or file!');
+        return getDownloadURL(snapshot.ref);
+      })
+      .then((downloadURL) => {
+        // Use the download URL as needed
+        console.log('Download URL:', downloadURL);
+        imageURLs.push(downloadURL);
+      });
     }
+    console.log(imageURLs);
   }
 
   function addJournalToFirestoreDB() {
