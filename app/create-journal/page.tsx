@@ -128,7 +128,7 @@ function CreateJournal() {
     const photo8Blob = new Blob([photo8Ref]);
     const blobs = [thumbnailBlob, photo1Blob, photo2Blob, photo3Blob, photo4Blob, photo5Blob, photo6Blob, photo7Blob, photo8Blob];
 
-    const imageURLs: string[] = [];
+    const imageURLs = new Array<string>(8);
     // Both fileRef and blobs have the same length
     for (let i = 0; i < filesRefs.length; i++) {
       // If the file is null, just skip the iteration (that is, don't upload the null file)
@@ -143,9 +143,9 @@ function CreateJournal() {
         return getDownloadURL(snapshot.ref);
       })
       .then((downloadURL) => {
-        // Use the download URL as needed
+        // Retrieve the download URL of the file that was just uploaded
         console.log('Download URL:', downloadURL);
-        imageURLs.push(downloadURL);
+        imageURLs[i]= downloadURL;
       });
     }
     console.log(imageURLs);
@@ -154,7 +154,7 @@ function CreateJournal() {
   function addJournalToFirestoreDB() {
     uploadImages();
     setDoc(doc(firestoreDB, 'journals', journalName), {
-      userEmail: email, // NEED USER ID
+      userEmail: email,
       name: journalName,
       description: description,
       groupSize: groupSize,
