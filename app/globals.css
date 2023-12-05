@@ -16,12 +16,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(223, 223, 223);
+  background: rgb(255, 255, 255);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(255, 255, 255);
+  background: rgb(223, 223, 223);
 }
 
 @media (prefers-color-scheme: dark) {
