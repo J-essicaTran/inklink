@@ -143,7 +143,7 @@ function CreateJournal() {
 
   function addJournalToFirestoreDB() {
     uploadImages();
-    const journalRef = addDoc(collection(firestoreDB, "journals"), {
+    setDoc(doc(firestoreDB, 'journals', journalName), {
       userEmail: email, // NEED USER ID
       name: journalName,
       description: description,
