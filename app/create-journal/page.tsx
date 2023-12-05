@@ -104,14 +104,41 @@ function CreateJournal() {
 
   // Uploads images to Cloud Storage bucket
   function uploadImages() {
-    // Create references to the image (assuming the input image is not null)
-    const file: File = thumbnail!;
-    const storageRef = ref(storage, 'journal-images/' + email + '/' + file?.name);
-    const blob = new Blob([file]);
+    // Create references to the images (assuming the input image is not null)
+    const thumbnailRef: File = thumbnail === null ? null!: thumbnail;
+    const photo1Ref: File = photo1 === null ? null!: photo1;
+    const photo2Ref: File = photo2 === null ? null!: photo2;
+    const photo3Ref: File = photo3 === null ? null!: photo3;
+    const photo4Ref: File = photo4 === null ? null!: photo4;
+    const photo5Ref: File = photo5 === null ? null!: photo5;
+    const photo6Ref: File = photo6 === null ? null!: photo6;
+    const photo7Ref: File = photo7 === null ? null!: photo7;
+    const photo8Ref: File = photo8 === null ? null!: photo8;
+    const filesRefs = [thumbnailRef, photo1Ref, photo2Ref, photo3Ref, photo4Ref, photo5Ref, photo6Ref, photo7Ref, photo8Ref];
 
-    uploadBytes(storageRef, file).then((snapshot) => {
+    // Create blobs (needed to pass as argument to uploadBytes)
+    const thumbnailBlob = new Blob([thumbnailRef]);
+    const photo1Blob = new Blob([photo1Ref]);
+    const photo2Blob = new Blob([photo2Ref]);
+    const photo3Blob = new Blob([photo3Ref]);
+    const photo4Blob = new Blob([photo4Ref]);
+    const photo5Blob = new Blob([photo5Ref]);
+    const photo6Blob = new Blob([photo6Ref]);
+    const photo7Blob = new Blob([photo7Ref]);
+    const photo8Blob = new Blob([photo8Ref]);
+    const blobs = [thumbnailBlob, photo1Blob, photo2Blob, photo3Blob, photo4Blob, photo5Blob, photo6Blob, photo7Blob, photo8Blob];
+
+    // Both fileRef and blobs have the same length
+    for (let i = 0; i < filesRefs.length; i++) {
+      // If the file is null, just skip the iteration (that is, don't upload the null file)
+      if (filesRefs[i] === null) {
+        continue;
+      }
+      const storageRef = ref(storage, 'journal-images/' + email + '/' + filesRefs[i].name);
+      uploadBytes(storageRef, blobs[i]).then((snapshot) => {
       console.log('Uploaded a blob or file!');
     });
+    }
   }
 
   function addJournalToFirestoreDB() {
