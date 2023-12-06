@@ -14,8 +14,33 @@ Welcome to the InkLink repository! We are aiming to build an application special
 - John Lugue (Front-end Developer) [@JohnLugue](https://github.com/JohnLugue)
 - Monty Al-Amiri (Front-end Developer) [@montyalamiri](https://github.com/montyalamiri)
 
-## Getting Started
+## Deploying InkLink with Docker
+This guide will walk you through the process of deploying InkLink using Docker. Docker provides a convenient way to package an application and its dependencies into a container, ensuring consistency across different environments.
 
 ### Prerequisites
+Before you can containerize InkLink, you need to have Docker installed on your machine. You can download the appropriate version of Docker for your operating system from the Docker website:
+- [Docker](https://www.docker.com/get-started)
 
-### Installation and Setup
+### Getting Started
+1. **Clone the Repository**
+    ```
+    git clone https://github.com/J-essicaTran/inklink.git
+    ```
+2. **Navigate Into Project Directory**
+    ```
+    cd inklink
+    ```
+3. **Build Docker Image**
+    ```
+    docker build -t your-image-name .
+    ```
+4. **Run Docker Container**
+    ```
+    docker run -p 3000:3000 -d your-image-name
+    ```
+5. **Access InkLink Application**
+
+    Open your web browser and navigate to http://localhost:3000 to access the deployed InkLink application.
+### Troubleshooting
+If you encounter any issues, refer to the [Docker documentation](https://docs.docker.com/) for troubleshooting and additional information.
+
