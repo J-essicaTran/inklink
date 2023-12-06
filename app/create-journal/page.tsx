@@ -185,6 +185,25 @@ function CreateJournal() {
         console.log("Thumbnail link set to: ", photo1Link);
       });
     }
+
+    // Store Photo 2 and get the download URL for this image
+    if (photo2Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo2Path = 'journal-images/' + email + '/' + journalName + '/' + photo2Ref.name;
+      const storageRef = ref(storage, photo2Path);
+      // Upload image
+      uploadBytes(storageRef, photo2Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto2Link(downloadURL);
+        console.log("Thumbnail link set to: ", photo2Link);
+      });
+    }
     
   }
 
