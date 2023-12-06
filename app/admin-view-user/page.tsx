@@ -89,7 +89,7 @@ function AdminViewUser() {
                       type="button"
                       className="border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 cursor-default hover:bg-red-700 hover:text-purple-200"
                     >
-                      <span>Delete Post</span>
+                      <span>Delete Journal</span>
                     </button>
                   </div>
                 </div>
@@ -136,7 +136,7 @@ function AdminViewUser() {
                       type="button"
                       className="border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 cursor-default hover:bg-red-700 hover:text-purple-200"
                     >
-                      <span>Delete Post</span>
+                      <span>Delete Journal</span>
                     </button>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ function AdminViewUser() {
                       type="button"
                       className="border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 cursor-default hover:bg-red-700 hover:text-purple-200"
                     >
-                      <span>Delete Post</span>
+                      <span>Delete Journal</span>
                     </button>
                   </div>
                 </div>
@@ -226,7 +226,7 @@ function AdminViewUser() {
                       type="button"
                       className="border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 cursor-default hover:bg-red-700 hover:text-purple-200"
                     >
-                      <span>Delete Post</span>
+                      <span>Delete Journal</span>
                     </button>
                   </div>
                 </div>
@@ -271,7 +271,7 @@ function AdminViewUser() {
                       type="button"
                       className="border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 cursor-default hover:bg-red-700 hover:text-purple-200"
                     >
-                      <span>Delete Post</span>
+                      <span>Delete Journal</span>
                     </button>
                   </div>
                 </div>
