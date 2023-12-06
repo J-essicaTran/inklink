@@ -150,14 +150,9 @@ function CreateJournal() {
 
     // Both fileRef and blobs have the same length
     for (let i = 0; i < filesRefs.length; i++) {
-      let fileURL: string = "";
       // Check if file is null
       if (filesRefs[i] === null) {
-        fileURL = "";
-        if (i === 0) {
-          setThumbnailLink(fileURL);
-          console.log("Thumbnail link set to: ", thumbnailLink);
-        }
+        continue;
       }
       else {
         // Specify directory of where to store images
@@ -169,52 +164,18 @@ function CreateJournal() {
         })
         .then((downloadURL) => {
           // Retrieve the download URL of the file that was just uploaded
-          console.log("File URL: ", fileURL);
+          console.log("Download URL: ", downloadURL);
           if (i === 0) {
             setThumbnailLink(downloadURL);
             console.log("Thumbnail link set to: ", thumbnailLink);
           }
-          else if (i === 1) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 1 link set to: ", photo1Link);
-          }
-          else if (i === 2) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 2 link set to: ", photo2Link);
-          }
-          else if (i === 3) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 3 link set to: ", photo3Link);
-          }
-          else if (i === 4) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 4 link set to: ", photo4Link);
-          }
-          else if (i === 5) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 5 link set to: ", photo5Link);
-          }
-          else if (i === 6) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 6 link set to: ", photo6Link);
-          }
-          else if (i === 7) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 7 link set to: ", photo7Link);
-          }
-          else if (i === 8) {
-            setPhoto1Link(downloadURL);
-            console.log("Photo 8 link set to: ", photo8Link);
-          }
         });
       }
     }
-    return [thumbnailLink, photo1Link, photo2Link, photo3Link, photo4Link, photo5Link, photo6Link, photo7Link, photo8Link];
   }
 
   function addJournalToFirestoreDB() {
-    const urls = uploadImages();
-    console.log(urls);
+    uploadImages();
     setDoc(doc(firestoreDB, 'journals', journalName), {
       userEmail: email,
       name: journalName,
