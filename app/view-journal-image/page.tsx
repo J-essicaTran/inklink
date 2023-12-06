@@ -5,9 +5,9 @@ function ViewJournalImage() {
     <div className="h-screen">
       <Header />
 
-      <div className="w-full h-full p-1 flex">
-        <div className="w-1/2 h-4/6 m-5 p-5 bg-neutral-800 rounded-md">
-          <div className="h-full w-full border-2 border-white bg-neutral-700 rounded-md">
+      <div className="w-full h-full p-1 flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-4/6 m-1 md:m-5 p-5 bg-neutral-800 rounded-md">
+          <div className="h-full w-full border-2 border-white bg-neutral-700 rounded-md shadow-around shadow-pink-600">
             <img
               src="/placeholder_photo.jpg"
               alt="placeholder"
@@ -16,7 +16,7 @@ function ViewJournalImage() {
           </div>
         </div>
 
-        <div className="w-1/2 h-full flex m-5 flex-col ">
+        <div className="w-full md:w-1/2 h-full flex m-1 md:m-5 flex-col ">
           <div className="w-full h-12 mb-5 flex bg-purple-500 text-purple-100 rounded-md">
             <div className="w-1/2 h-full p-2">
               <h1 className="font-bold"> Sam's Drawing </h1>
@@ -31,13 +31,17 @@ function ViewJournalImage() {
 
           {/* The border gives too much clutter maybe */}
 
-          <div className="w-full h-4/6 p-5 flex bg-neutral-800 rounded-md">
-            <div className="w-1/3 h-full p-2 border-2 border-purple-500 rounded-md ">
+          <div className="w-full h-full md:h-4/6 p-5 flex flex-col md:flex-row bg-neutral-800 rounded-md">
+            <div className="w-full md:w-1/3 h-60 md:h-full p-2 rounded-md ">
               <div className="h-fit p-2 bg-neutral-700 rounded-lg">
                 <h1 className="text-center font-bold"> DESCRIPTION </h1>
               </div>
 
-              <div className="h-5/6 p-2 mt-4 overflow-y-auto">
+              <div className="h-2 w-full mt-2 bg-pink-600 flex justify-center items-center rounded-full">
+                <div className="h-1 w-full bg-white rounded-full"></div>
+              </div>
+
+              <div className="h-5/6 p-2 mt-2 overflow-y-auto">
                 <span className="">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                   Ducimus, temporibus. Autem, dolor accusantium. Fugit provident
@@ -59,12 +63,16 @@ function ViewJournalImage() {
               </div>
             </div>
 
-            <div className="w-2/3 ml-1 p-2 h-full flex flex-col bg-neutral-800 border-2 border-purple-500 rounded-md">
+            <div className="w-full md:w-2/3 ml-1 p-2 h-full flex flex-col bg-neutral-800 rounded-md">
               <div className="h-fit p-2 bg-neutral-700 rounded-lg">
                 <h1 className="text-center font-bold"> COMMENTS </h1>
               </div>
 
-              <div className="h-full mt-4 overflow-y-auto">
+              <div className="h-2 w-full mt-2 bg-pink-600 flex justify-center items-center rounded-full">
+                <div className="h-1 w-full bg-white rounded-full"></div>
+              </div>
+
+              <div className="h-80 md:h-full mt-2 overflow-y-auto">
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
                   <div className="h-20 w-20 rounded-full overflow-hidden">
                     <img
