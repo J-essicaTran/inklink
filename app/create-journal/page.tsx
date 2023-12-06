@@ -23,6 +23,16 @@ function CreateJournal() {
   const [photo7, setPhoto7] = useState<File | null>(null);
   const [photo8, setPhoto8] = useState<File | null>(null);
 
+  const [thumbnailLink, setThumbnailLink] = useState<string | null>(null);
+  // const [photo1Link, setPhoto1Link] = useState<string | null>(null);
+  // const [photo2Link, setPhoto2Link] = useState<string | null>(null);
+  // const [photo3Link, setPhoto3Link] = useState<string | null>(null);
+  // const [photo4Link, setPhoto4Link] = useState<string | null>(null);
+  // const [photo5Link, setPhoto5Link] = useState<string | null>(null);
+  // const [photo6Link, setPhoto6Link] = useState<string | null>(null);
+  // const [photo7Link, setPhoto7Link] = useState<string | null>(null);
+  // const [photo8Link, setPhoto8Link] = useState<string | null>(null);
+  
   /////////////////////////////// DEBUGGING ///////////////////////////////////
   useEffect(() => {
     console.log("Thumbnail changed: ", thumbnail);
@@ -128,45 +138,66 @@ function CreateJournal() {
     const photo8Blob = new Blob([photo8Ref]);
     const blobs = [thumbnailBlob, photo1Blob, photo2Blob, photo3Blob, photo4Blob, photo5Blob, photo6Blob, photo7Blob, photo8Blob];
 
-    const imageURLs = new Array<string>(8);
+    // let thumbnailLink: string | null = null;
+    let photo1Link: string | null = null;
+    let photo2Link: string | null = null;
+    let photo3Link: string | null = null;
+    let photo4Link: string | null = null;
+    let photo5Link: string | null = null;
+    let photo6Link: string | null = null;
+    let photo7Link: string | null = null;
+    let photo8Link: string | null = null;
+
     // Both fileRef and blobs have the same length
     for (let i = 0; i < filesRefs.length; i++) {
-      // If the file is null, just skip the iteration (that is, don't upload the null file)
+      let fileURL: string = "";
+      // Check if file is null
       if (filesRefs[i] === null) {
-        continue;
+        fileURL = "";
+        if (i === 0) {
+          setThumbnailLink(fileURL);
+          console.log("Thumbnail link set to: ", thumbnailLink);
+        }
       }
-      // Specify directory of where to store images
-      let folderPath = 'journal-images/' + email + '/' + journalName + '/' + filesRefs[i].name;
-      const storageRef = ref(storage, folderPath);
-      uploadBytes(storageRef, blobs[i]).then((snapshot) => {
-        console.log('Uploaded a blob or file!');
-        return getDownloadURL(snapshot.ref);
-      })
-      .then((downloadURL) => {
-        // Retrieve the download URL of the file that was just uploaded
-        console.log('Download URL:', downloadURL);
-        imageURLs[i]= downloadURL;
-      });
+      else {
+        // Specify directory of where to store images
+        let folderPath = 'journal-images/' + email + '/' + journalName + '/' + filesRefs[i].name;
+        const storageRef = ref(storage, folderPath);
+        uploadBytes(storageRef, blobs[i]).then((snapshot) => {
+          console.log('Uploaded a blob or file!');
+          return getDownloadURL(snapshot.ref);
+        })
+        .then((downloadURL) => {
+          // Retrieve the download URL of the file that was just uploaded
+          fileURL = downloadURL;
+          console.log("File URL: ", fileURL);
+          if (i === 0) {
+            setThumbnailLink(downloadURL);
+            console.log("Thumbnail link set to: ", thumbnailLink);
+          }
+        });
+      }
     }
-    console.log(imageURLs);
+    return [thumbnailLink, photo1Link, photo2Link, photo3Link, photo4Link, photo5Link, photo6Link, photo7Link, photo8Link];
   }
 
   function addJournalToFirestoreDB() {
-    uploadImages();
+    const urls = uploadImages();
+    console.log(urls);
     setDoc(doc(firestoreDB, 'journals', journalName), {
       userEmail: email,
       name: journalName,
       description: description,
       groupSize: groupSize,
-      thumbnail: null,
-      photo1: null,
-      photo2: null,
-      photo3: null,
-      photo4: null,
-      photo5: null,
-      photo6: null,
-      photo7: null,
-      photo8: null
+      thumbnail: thumbnailLink,
+      photo1: urls[1],
+      photo2: urls[2],
+      photo3: urls[3],
+      photo4: urls[4],
+      photo5: urls[5],
+      photo6: urls[6],
+      photo7: urls[7],
+      photo8: urls[8]
     });
     console.log("Journal created!")
   }
