@@ -24,14 +24,14 @@ function CreateJournal() {
   const [photo8, setPhoto8] = useState<File | null>(null);
 
   const [thumbnailLink, setThumbnailLink] = useState<string | null>(null);
-  // const [photo1Link, setPhoto1Link] = useState<string | null>(null);
-  // const [photo2Link, setPhoto2Link] = useState<string | null>(null);
-  // const [photo3Link, setPhoto3Link] = useState<string | null>(null);
-  // const [photo4Link, setPhoto4Link] = useState<string | null>(null);
-  // const [photo5Link, setPhoto5Link] = useState<string | null>(null);
-  // const [photo6Link, setPhoto6Link] = useState<string | null>(null);
-  // const [photo7Link, setPhoto7Link] = useState<string | null>(null);
-  // const [photo8Link, setPhoto8Link] = useState<string | null>(null);
+  const [photo1Link, setPhoto1Link] = useState<string | null>(null);
+  const [photo2Link, setPhoto2Link] = useState<string | null>(null);
+  const [photo3Link, setPhoto3Link] = useState<string | null>(null);
+  const [photo4Link, setPhoto4Link] = useState<string | null>(null);
+  const [photo5Link, setPhoto5Link] = useState<string | null>(null);
+  const [photo6Link, setPhoto6Link] = useState<string | null>(null);
+  const [photo7Link, setPhoto7Link] = useState<string | null>(null);
+  const [photo8Link, setPhoto8Link] = useState<string | null>(null);
   
   /////////////////////////////// DEBUGGING ///////////////////////////////////
   useEffect(() => {
@@ -139,14 +139,14 @@ function CreateJournal() {
     const blobs = [thumbnailBlob, photo1Blob, photo2Blob, photo3Blob, photo4Blob, photo5Blob, photo6Blob, photo7Blob, photo8Blob];
 
     // let thumbnailLink: string | null = null;
-    let photo1Link: string | null = null;
-    let photo2Link: string | null = null;
-    let photo3Link: string | null = null;
-    let photo4Link: string | null = null;
-    let photo5Link: string | null = null;
-    let photo6Link: string | null = null;
-    let photo7Link: string | null = null;
-    let photo8Link: string | null = null;
+    // let photo1Link: string | null = null;
+    // let photo2Link: string | null = null;
+    // let photo3Link: string | null = null;
+    // let photo4Link: string | null = null;
+    // let photo5Link: string | null = null;
+    // let photo6Link: string | null = null;
+    // let photo7Link: string | null = null;
+    // let photo8Link: string | null = null;
 
     // Both fileRef and blobs have the same length
     for (let i = 0; i < filesRefs.length; i++) {
@@ -169,11 +169,42 @@ function CreateJournal() {
         })
         .then((downloadURL) => {
           // Retrieve the download URL of the file that was just uploaded
-          fileURL = downloadURL;
           console.log("File URL: ", fileURL);
           if (i === 0) {
             setThumbnailLink(downloadURL);
             console.log("Thumbnail link set to: ", thumbnailLink);
+          }
+          else if (i === 1) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 1 link set to: ", photo1Link);
+          }
+          else if (i === 2) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 2 link set to: ", photo2Link);
+          }
+          else if (i === 3) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 3 link set to: ", photo3Link);
+          }
+          else if (i === 4) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 4 link set to: ", photo4Link);
+          }
+          else if (i === 5) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 5 link set to: ", photo5Link);
+          }
+          else if (i === 6) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 6 link set to: ", photo6Link);
+          }
+          else if (i === 7) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 7 link set to: ", photo7Link);
+          }
+          else if (i === 8) {
+            setPhoto1Link(downloadURL);
+            console.log("Photo 8 link set to: ", photo8Link);
           }
         });
       }
@@ -190,14 +221,14 @@ function CreateJournal() {
       description: description,
       groupSize: groupSize,
       thumbnail: thumbnailLink,
-      photo1: urls[1],
-      photo2: urls[2],
-      photo3: urls[3],
-      photo4: urls[4],
-      photo5: urls[5],
-      photo6: urls[6],
-      photo7: urls[7],
-      photo8: urls[8]
+      photo1: photo1Link,
+      photo2: photo2Link,
+      photo3: photo3Link,
+      photo4: photo4Link,
+      photo5: photo5Link,
+      photo6: photo6Link,
+      photo7: photo7Link,
+      photo8: photo8Link
     });
     console.log("Journal created!")
   }
