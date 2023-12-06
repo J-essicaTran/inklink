@@ -74,7 +74,7 @@ function ViewJournalImage() {
 
               <div className="h-80 md:h-full mt-2 overflow-y-auto">
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="h-20 w-20 rounded-full border-2 border-white overflow-hidden">
                     <img
                       src="/ghosty_profilepic.jpg"
                       alt="ghosty profile pic"
@@ -89,11 +89,11 @@ function ViewJournalImage() {
                 </div>
 
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
                     <img
-                      src="/default_pfp.jpg"
-                      alt="default pic"
-                      className="w-full h-full object-cover"
+                      className="w-12 h-12 object-cover"
+                      src="/logo.png"
+                      alt="logo"
                     />
                   </div>
 
@@ -104,7 +104,7 @@ function ViewJournalImage() {
                 </div>
 
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="h-20 w-20 rounded-full border-2 border-white  overflow-hidden">
                     <img
                       src="/pfp.jpg"
                       alt="profile pic"
@@ -119,11 +119,11 @@ function ViewJournalImage() {
                 </div>
 
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
                     <img
-                      src="/default_pfp.jpg"
-                      alt="default pic"
-                      className="w-full h-full object-cover"
+                      className="w-12 h-12 object-cover"
+                      src="/logo.png"
+                      alt="logo"
                     />
                   </div>
 
@@ -134,11 +134,11 @@ function ViewJournalImage() {
                 </div>
 
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
                     <img
-                      src="/default_pfp.jpg"
-                      alt="default pic"
-                      className="w-full h-full object-cover"
+                      className="w-12 h-12 object-cover"
+                      src="/logo.png"
+                      alt="logo"
                     />
                   </div>
 
@@ -149,11 +149,11 @@ function ViewJournalImage() {
                 </div>
 
                 <div className="flex h-24 p-2 m-2 bg-neutral-700 rounded-lg">
-                  <div className="h-20 w-20 rounded-full overflow-hidden">
+                  <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
                     <img
-                      src="/default_pfp.jpg"
-                      alt="default pic"
-                      className="w-full h-full object-cover"
+                      className="w-12 h-12 object-cover"
+                      src="/logo.png"
+                      alt="logo"
                     />
                   </div>
 
