@@ -204,7 +204,120 @@ function CreateJournal() {
         console.log("Photo 2 link set to: ", photo2Link);
       });
     }
-    
+
+    // Store Photo 3 and get the download URL for this image
+    if (photo3Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo3Path = 'journal-images/' + email + '/' + journalName + '/' + photo3Ref.name;
+      const storageRef = ref(storage, photo3Path);
+      // Upload image
+      uploadBytes(storageRef, photo3Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto3Link(downloadURL);
+        console.log("Photo 3 link set to: ", photo3Link);
+      });
+    }
+
+    // Store Photo 4 and get the download URL for this image
+    if (photo4Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo4Path = 'journal-images/' + email + '/' + journalName + '/' + photo4Ref.name;
+      const storageRef = ref(storage, photo4Path);
+      // Upload image
+      uploadBytes(storageRef, photo4Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto4Link(downloadURL);
+        console.log("Photo 4 link set to: ", photo4Link);
+      });
+    }
+
+    // Store Photo 5 and get the download URL for this image
+    if (photo5Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo5Path = 'journal-images/' + email + '/' + journalName + '/' + photo5Ref.name;
+      const storageRef = ref(storage, photo5Path);
+      // Upload image
+      uploadBytes(storageRef, photo5Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto5Link(downloadURL);
+        console.log("Photo 5 link set to: ", photo5Link);
+      });
+    }
+
+    // Store Photo 6 and get the download URL for this image
+    if (photo6Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo6Path = 'journal-images/' + email + '/' + journalName + '/' + photo6Ref.name;
+      const storageRef = ref(storage, photo6Path);
+      // Upload image
+      uploadBytes(storageRef, photo6Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto6Link(downloadURL);
+        console.log("Photo 6 link set to: ", photo6Link);
+      });
+    }
+
+    // Store Photo 7 and get the download URL for this image
+    if (photo7Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo7Path = 'journal-images/' + email + '/' + journalName + '/' + photo7Ref.name;
+      const storageRef = ref(storage, photo7Path);
+      // Upload image
+      uploadBytes(storageRef, photo7Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto7Link(downloadURL);
+        console.log("Photo 7 link set to: ", photo7Link);
+      });
+    }
+
+    // Store Photo 8 and get the download URL for this image
+    if (photo8Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo8Path = 'journal-images/' + email + '/' + journalName + '/' + photo8Ref.name;
+      const storageRef = ref(storage, photo8Path);
+      // Upload image
+      uploadBytes(storageRef, photo8Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto8Link(downloadURL);
+        console.log("Photo 8 link set to: ", photo8Link);
+      });
+    }
   }
 
   function addJournalToFirestoreDB() {
