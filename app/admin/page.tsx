@@ -1,12 +1,13 @@
-import Header from "../components/Header"
+import Header from "../components/Header";
+import UserListAdmin from "../components/UserListAdmin";
 
 function Admin() {
   return (
     <div>
       <Header />
-      Admin
+      <UserListAdmin />
     </div>
-  )
+  );
 }
 
-export default Admin
+export default Admin;
