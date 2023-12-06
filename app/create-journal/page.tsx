@@ -182,7 +182,7 @@ function CreateJournal() {
         // Retrieve the download URL of the file that was just uploaded
         console.log("Download URL: ", downloadURL);
         setPhoto1Link(downloadURL);
-        console.log("Thumbnail link set to: ", photo1Link);
+        console.log("Photo 1 link set to: ", photo1Link);
       });
     }
 
@@ -201,7 +201,7 @@ function CreateJournal() {
         // Retrieve the download URL of the file that was just uploaded
         console.log("Download URL: ", downloadURL);
         setPhoto2Link(downloadURL);
-        console.log("Thumbnail link set to: ", photo2Link);
+        console.log("Photo 2 link set to: ", photo2Link);
       });
     }
     
