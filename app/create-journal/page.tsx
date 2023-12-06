@@ -148,30 +148,44 @@ function CreateJournal() {
     // let photo7Link: string | null = null;
     // let photo8Link: string | null = null;
 
-    // Both fileRef and blobs have the same length
-    for (let i = 0; i < filesRefs.length; i++) {
-      // Check if file is null
-      if (filesRefs[i] === null) {
-        continue;
-      }
-      else {
-        // Specify directory of where to store images
-        let folderPath = 'journal-images/' + email + '/' + journalName + '/' + filesRefs[i].name;
-        const storageRef = ref(storage, folderPath);
-        uploadBytes(storageRef, blobs[i]).then((snapshot) => {
-          console.log('Uploaded a blob or file!');
-          return getDownloadURL(snapshot.ref);
-        })
-        .then((downloadURL) => {
-          // Retrieve the download URL of the file that was just uploaded
-          console.log("Download URL: ", downloadURL);
-          if (i === 0) {
-            setThumbnailLink(downloadURL);
-            console.log("Thumbnail link set to: ", thumbnailLink);
-          }
-        });
-      }
+    // Store thumbnail and get the download URL for this image
+    if (thumbnailRef !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let thumbnailPath = 'journal-images/' + email + '/' + journalName + '/' + thumbnailRef.name;
+      const storageRef = ref(storage, thumbnailPath);
+      // Upload image
+      uploadBytes(storageRef, thumbnailBlob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setThumbnailLink(downloadURL);
+        console.log("Thumbnail link set to: ", thumbnailLink);
+      });
     }
+
+    // Store Photo 1 and get the download URL for this image
+    if (photo1Ref !== null) {
+      // Specify the path for which the file will be saved to in the Cloud Storage bucket
+      let photo1Path = 'journal-images/' + email + '/' + journalName + '/' + photo1Ref.name;
+      const storageRef = ref(storage, photo1Path);
+      // Upload image
+      uploadBytes(storageRef, photo1Blob).then((snapshot) => {
+        console.log('Uploaded thumbnail!');
+        return getDownloadURL(snapshot.ref);
+      })
+      // Get URL of image
+      .then((downloadURL) => {
+        // Retrieve the download URL of the file that was just uploaded
+        console.log("Download URL: ", downloadURL);
+        setPhoto1Link(downloadURL);
+        console.log("Thumbnail link set to: ", photo1Link);
+      });
+    }
+    
   }
 
   function addJournalToFirestoreDB() {
