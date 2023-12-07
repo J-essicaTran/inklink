@@ -22,23 +22,24 @@ Before you can containerize InkLink, you need to have Docker installed on your m
 - [Docker](https://www.docker.com/get-started)
 
 ### Getting Started
-1. **Clone the Repository**
+1. **Have the Docker Desktop Application Running**
+2. **Clone the Repository**
     ```
     git clone https://github.com/J-essicaTran/inklink.git
     ```
-2. **Navigate Into Project Directory**
+3. **Navigate Into Project Directory**
     ```
     cd inklink
     ```
-3. **Build Docker Image**
+4. **Build Docker Image**
     ```
     docker build -t your-image-name .
     ```
-4. **Run Docker Container**
+5. **Run Docker Container**
     ```
     docker run -p 3000:3000 -d your-image-name
     ```
-5. **Access InkLink Application**
+6. **Access InkLink Application**
 
     Open your web browser and navigate to http://localhost:3000 to access the deployed InkLink application.
 ### Troubleshooting
