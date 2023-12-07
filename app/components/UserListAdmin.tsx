@@ -38,7 +38,7 @@ function UserListAdmin() {
           key={doc.id}
           className="flex flex-col p-5 bg-neutral-800 rounded-lg border-2 border-white hover:border-pink-600 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md"
         >
-          <button onClick={() => router.push("/" + doc.data().email)}>
+          <button onClick={() => router.push("/admin-view-user")}>
             <div className="flex mb-10">
               <div className="border-2 border-white bg-gradient-to-b from-[#BA6CEB] to-[#4D5ECF] rounded-full p-4 mr-5 flex-shrink-0">
                 <img

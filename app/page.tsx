@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
+import Link from 'next/link'
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import Header from "./components/Header";
-import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
+import Nav from "./components/Navigation"
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -21,9 +22,8 @@ export default function Home() {
   return (
     <div className="h-screen">
       <Header />
+      {/* <Nav /> */}
       <div className="h-full w-full flex flex-col items-center my-1">
-        <div className="text-white">Email: {session?.user?.email}</div>
-
         <div className="flex flex-col w-full max-sm:h-full p-5">
           <div className="w-full h-11 mb-1 rounded-lg border-2 border-purple-700 bg-purple-700 px-5 py-2 text-purple-100">
             <span>Explore</span>
@@ -44,8 +44,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -64,7 +64,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -78,8 +78,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -98,7 +98,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -112,8 +112,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -132,7 +132,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -146,8 +146,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -166,7 +166,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -180,8 +180,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -200,7 +200,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -226,8 +226,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -246,7 +246,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -260,8 +260,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -280,7 +280,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -294,8 +294,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -314,7 +314,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -328,8 +328,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -348,7 +348,7 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -362,8 +362,8 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a
-                  href="#"
+                <Link
+                  href="/view-journal"
                   className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600"
                 >
                   See more
@@ -382,13 +382,11 @@ export default function Home() {
                       d="M1 5h12m0 0L9 1m4 4L9 9"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-
-        <Navigation />
       </div>
     </div>
   );
