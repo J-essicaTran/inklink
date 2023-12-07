@@ -42,6 +42,10 @@ Before you can containerize InkLink, you need to have Docker installed on your m
 6. **Access InkLink Application**
 
     Open your web browser and navigate to http://localhost:3000 to access the deployed InkLink application.
+
+### How To Close Application
+Click the stop button in the Docker desktop application
+ 
 ### Troubleshooting
 If you encounter any issues, refer to the [Docker documentation](https://docs.docker.com/) for troubleshooting and additional information.
 
