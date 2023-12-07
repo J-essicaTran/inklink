@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { firestoreDB } from '../firebase';
 import { doc, getDoc, DocumentData } from "firebase/firestore"
 import Header from '../components/Header'
@@ -69,13 +70,13 @@ function Profile({params} : {params:any}) {
                   </p>
                   
                   <div className="flex justify-between select-none">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
+                    <Link href="view-journal" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
                       See more
                       <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                       </svg>
-                    </a>
-                    <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a>
+                    </Link>
+                    {/* <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a> */}
                   </div>
                 </div>
               </div>
@@ -92,13 +93,13 @@ function Profile({params} : {params:any}) {
                   </p>
                   
                   <div className="flex justify-between select-none">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
+                    <Link href="view-journal" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
                       See more
                       <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                       </svg>
-                    </a>
-                    <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a>
+                    </Link>
+                    {/* <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a> */}
                   </div>
                 </div>
               </div>
@@ -115,13 +116,13 @@ function Profile({params} : {params:any}) {
                   </p>
                   
                   <div className="flex justify-between select-none">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
+                    <Link href="view-journal" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
                       See more
                       <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                       </svg>
-                    </a>
-                    <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a>
+                    </Link>
+                    {/* <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a> */}
                   </div>
                 </div>
               </div>
@@ -138,13 +139,13 @@ function Profile({params} : {params:any}) {
                   </p>
                   
                   <div className="flex justify-between select-none">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
+                    <Link href="view-journal" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
                       See more
                       <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                       </svg>
-                    </a>
-                    <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a>
+                    </Link>
+                    {/* <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a> */}
                   </div>
                 </div>
               </div>
@@ -161,13 +162,13 @@ function Profile({params} : {params:any}) {
                   </p>
                   
                   <div className="flex justify-between select-none">
-                    <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
+                    <Link href="view-journal" className="inline-flex items-center px-3 py-2 text-sm font-semibold text-center text-white bg-purple-500 rounded-lg hover:bg-purple-600">
                       See more
                       <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                       </svg>
-                    </a>
-                    <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a>
+                    </Link>
+                    {/* <a href="#" className="text-sm font-semibold text-center border-2 border-red-500 rounded-lg px-3 py-2 text-red-500 hover:bg-red-700 hover:text-white">Delete Journal</a> */}
                   </div>
                 </div>
               </div>
