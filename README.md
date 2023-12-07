@@ -33,11 +33,11 @@ Before you can containerize InkLink, you need to have Docker installed on your m
     ```
 4. **Build Docker Image**
     ```
-    docker build -t your-image-name .
+    docker build -t ink-link-img .
     ```
 5. **Run Docker Container**
     ```
-    docker run -p 3000:3000 -d your-image-name
+    docker run -p 3000:3000 -d ink-link-img
     ```
 6. **Access InkLink Application**
 
